@@ -20,7 +20,7 @@
 
 립스틱 색(color space를 rgb, hsv, lab 뿐만 아니라 변형시킨 xyz로도 사용함.)
 
-![colors](https://github.com/JooJiyun/virtual_makeup/Assets/lipstick_colors.png){: .align-center} 
+![colors](https://github.com/JooJiyun/virtual_makeup/blob/master/Assets/lipstick_colors.png){: .align-center} 
 
 ---
 **진행 방법**
@@ -35,11 +35,11 @@
 
 물론 optimal parameter를 찾는 선형회귀의 parameter를 계속 바꾸어 optimal parametr 또한 계속 바꿔가면서 실험.
 
-![way1](https://github.com/JooJiyun/virtual_makeup/Assets/lipsticks_1.png){: .align-center} 
+![way1](https://github.com/JooJiyun/virtual_makeup/blob/master/Assets/lipsticks_1.png){: .align-center} 
 
 (2) 프로젝트의 원래의 취지와는 별개로 제공되는 어플을 고려하지 않고 바로 화장 후의 색을 추정.
 
-![way2](https://github.com/JooJiyun/virtual_makeup/Assets/lipsticks_2.png){: .align-center} 
+![way2](https://github.com/JooJiyun/virtual_makeup/blob/master/Assets/lipsticks_2.png){: .align-center} 
 
 결과비교는 LAB color space에서 진행. 
 
@@ -79,11 +79,11 @@ generator의 구조를 참고하여 변형된 dilated resnet을 사용.
 
 하지만 epoch을 크게 할 수록 결과가 립스틱 색상 계열에 따라 치우친 결과가 나오게 됨.
 
-![cnn result](https://github.com/JooJiyun/virtual_makeup/Assets/cnn_result.png){: .align-center} 
+![cnn result](https://github.com/JooJiyun/virtual_makeup/blob/master/Assets/cnn_result.png){: .align-center} 
 
 수치적으로도 별로 결과가 그리 좋지 않았음.
 
-![cnn loss](https://github.com/JooJiyun/virtual_makeup/Assets/CNN_loss.png){: .align-center} 
+![cnn loss](https://github.com/JooJiyun/virtual_makeup/blob/master/Assets/CNN_loss.png){: .align-center} 
 
 LAB에서 차이가 3이내여야 괜찮은건데 아래 그래프만 봐도 알 수 있듯이 대부분이 3을 넘었다.
 
@@ -103,7 +103,7 @@ resource등을 이유로 네트워크를 깊게 만들지 못했지만 네트워
 
 논문과 마찬가지로 makeupGAN과 removeGAN으로 이루어진 네트워크지만 paired하지는 않다.
 
-![not used](https://github.com/JooJiyun/virtual_makeup/Assets/not_used.png){: .align-center} 
+![not used](https://github.com/JooJiyun/virtual_makeup/blob/master/Assets/not_used.png){: .align-center} 
 
 본래의 논문대로라면, 위의 그림과 같이 구성하여 data를 더 모아 실험이 가능 했겠지만 아래와 같은 이유들(unpaired data)로 인해 구조를 바꾸게 되었다.
 
@@ -119,11 +119,11 @@ fake B와 fake B’이 다른 사람일 경우, 립스틱의 번호와 무관하
 
 아래와 같이 바로 cycle data를 만들도록 하여 cycle data만 pool에 넣을 수 있도록 하였다.
 
-![used](https://github.com/JooJiyun/virtual_makeup/Assets/used.png){: .align-center} 
+![used](https://github.com/JooJiyun/virtual_makeup/blob/master/Assets/used.png){: .align-center} 
 
 generator 구조들:
 
-![generator](https://github.com/JooJiyun/virtual_makeup/Assets/generator.png){: .align-center} 
+![generator](https://github.com/JooJiyun/virtual_makeup/blob/master/Assets/generator.png){: .align-center} 
 
 CNN때와 마찬가지로 네트워크는 조금 간소화 시키고 여러가지를 변경시키면서 실험하였다.
 
@@ -131,7 +131,7 @@ loss는 generator loss, descriminator loss, cycle consistency loss에 각각 상
 
 결과:
 
-![gan result](https://github.com/JooJiyun/virtual_makeup/Assets/gan_result.png){: .align-center} 
+![gan result](https://github.com/JooJiyun/virtual_makeup/blob/master/Assets/gan_result.png){: .align-center} 
 
 제일 나은 결과를 얻을 수는 있었지만 그리 좋은 결과는 아니었고 blending과 같은 후처리까지 고려해보았지만 사용하기엔 어려웠다.
 
